@@ -643,7 +643,6 @@ footer {
     ----- 8. Project Styles -----
     -------------------------------
 */
-
 #projects {
     padding: 50px 15px;
     border-bottom: 1px solid $border;
@@ -662,10 +661,29 @@ footer {
     overflow: hidden;
     background: #fff;
     border-radius: 4px;
+    clear: both; /* clear float */
 }
 
 .project-image {
     float: left;
+    max-height: 250px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out; /* Add transition for smooth scaling */
+}
+
+.project-image img {
+    width: 100%;
+    transition: all 0.3s ease-in-out; /* Add transition for smooth scaling */
+}
+
+.project-image:hover {
+    max-height: none; /* Remove max-height constraint on hover */
+    z-index: 10; /* Optional: Make it appear above other elements */
+}
+
+.project-image:hover img {
+    transform: scale(1.2); /* Scale the image up on hover */
 }
 
 .project-info {
